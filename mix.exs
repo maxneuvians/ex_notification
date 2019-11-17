@@ -14,7 +14,9 @@ defmodule ExNotification.MixProject do
       homepage_url: "https://github.com/maxneuvians/ex_notification",
       docs: [
         main: "ExNotification"
-      ]
+      ],
+      description: description(),
+      package: package(),
     ]
   end
 
@@ -33,6 +35,19 @@ defmodule ExNotification.MixProject do
       {:joken, "~> 2.0"},
       {:jason, ">= 1.0.0"},
       {:tesla, "~> 1.3.0"},
+    ]
+  end
+
+  defp description() do
+    "An elixir client for the notification system APIs used by the Australian, British, and Canadian governments."
+  end
+
+  defp package() do
+    [
+      files: ~w(lib priv .formatter.exs mix.exs README* readme* LICENSE*
+                license* CHANGELOG* changelog* src),
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/maxneuvians/ex_notification"}
     ]
   end
 end
